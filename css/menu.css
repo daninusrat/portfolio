@@ -1,3 +1,11 @@
+:root {
+  --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
+  --main-red: #bf3f3f; /* Primær rød skrift */
+  --dark-red: #ff3e3e; /* Mørkere rød variant */
+  --light-grey: #d9d9d9; /* Gråhvide tekster */
+  --border-grey: #8c8c8c; /* Grå til borders og linjer */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +22,7 @@ header {
   align-items: center;
   padding: 10px;
   border-radius: 35px;
-  background-color: var(--primary_beige);
+  background-color: var(--dark-grey); /* Mørkegrå baggrund */
   z-index: 10;
 }
 
@@ -41,13 +49,14 @@ nav {
 .menu a {
   display: block;
   padding: 10px 25px;
-  color: rgb(0, 0, 0);
+  color: var(--light-grey); /* Gråhvid tekst */
   font-family: "neue_haas_grotesk_display65Md";
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .menu a:hover {
+  color: var(--main-red); /* Primær rød farve ved hover */
   transform: scale(1.03);
 }
 
@@ -60,17 +69,18 @@ nav {
 .burger .line {
   width: 100%;
   height: 2px;
-  background-color: #333333;
+  background-color: var(--border-grey); /* Borderfarve */
   margin-bottom: 5px;
   transition: 0.2s linear;
 }
+
 .burger {
   display: none;
 }
 
 ul {
   list-style: none;
-  background-color: var(--primary_beige);
+  background-color: var(--dark-grey); /* Mørkegrå baggrund */
 }
 
 ul li {
@@ -81,7 +91,7 @@ ul li {
 
 ul li a {
   display: block;
-  color: black;
+  color: var(--light-grey); /* Gråhvid tekst */
   text-decoration: none;
   text-align: start;
   font-size: 17px;
@@ -98,7 +108,7 @@ ul li ul.dropdown li a {
 
 ul li ul.dropdown {
   width: 200px;
-  background-color: #fcf5e6;
+  background-color: var(--dark-grey); /* Mørkegrå dropdown baggrund */
   position: absolute;
   z-index: 999;
   display: none;
@@ -132,12 +142,14 @@ ul li:hover ul.dropdown {
 
   .menu {
     display: none;
-    grid-template-columns: unset; /* Fjerner eventuelle grid-kolonner -- overskrider tidligere */
+    grid-template-columns: unset;
     grid-gap: unset;
   }
+
   .burger {
     display: block;
   }
+
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
     transition: 0.2s linear;
@@ -156,11 +168,10 @@ ul li:hover ul.dropdown {
   nav.active .menu {
     display: flex;
     flex-direction: column;
-    background-color: #fffcf9;
+    background-color: var(--dark-grey); /* Mørkegrå baggrund */
     position: absolute;
     border-radius: 15px;
     top: 94px;
-
     left: 0;
     width: 100%;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -178,7 +189,7 @@ ul li:hover ul.dropdown {
 
   ul li a {
     display: block;
-    color: black;
+    color: var(--light-grey); /* Gråhvid tekst */
     text-decoration: none;
     text-align: start;
     font-size: 12px;
