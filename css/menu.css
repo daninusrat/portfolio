@@ -1,4 +1,4 @@
-:root {
+html {
   --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
   --main-red: #bf3f3f; /* Primær rød skrift */
   --dark-red: #ff3e3e; /* Mørkere rød variant */
@@ -19,7 +19,7 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
   padding: 10px;
   border-radius: 35px;
   background-color: var(--dark-grey); /* Mørkegrå baggrund */

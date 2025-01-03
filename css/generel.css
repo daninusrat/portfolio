@@ -9,11 +9,25 @@ img {
   height: auto;
   display: block;
 }
-
 :root {
+  scroll-behavior: smooth;
+}
+
+html {
   --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
   --main-red: #bf3f3f; /* Primær rød skrift */
   --dark-red: #ff3e3e; /* Mørkere rød variant */
   --light-grey: #d9d9d9; /* Gråhvide tekster */
   --border-grey: #8c8c8c;
+}
+
+/* body og main */
+body {
+  background-color: var(--dark-grey);
+}
+
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: red;
 }
