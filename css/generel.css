@@ -1,0 +1,19 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
+  --main-red: #bf3f3f; /* Primær rød skrift */
+  --dark-red: #ff3e3e; /* Mørkere rød variant */
+  --light-grey: #d9d9d9; /* Gråhvide tekster */
+  --border-grey: #8c8c8c;
+}
