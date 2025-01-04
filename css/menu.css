@@ -1,4 +1,4 @@
-html {
+:root {
   --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
   --main-red: #bf3f3f; /* Primær rød skrift */
   --dark-red: #ff3e3e; /* Mørkere rød variant */
@@ -6,60 +6,71 @@ html {
   --border-grey: #8c8c8c; /* Grå til borders og linjer */
 }
 
+/* Global styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* HEADER STYLING (Mobile First) */
 header {
   position: sticky;
   top: 0;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-  border-radius: 35px;
-  background-color: var(--dark-grey); /* Mørkegrå baggrund */
-  z-index: 10;
+  width: 100%;
+  background-color: var(--dark-grey);
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* MENU STYLING (Mobile) */
 .menu {
-  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  background-color: var(--dark-grey);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu li {
-  margin-right: 20px;
-}
-
-.menu li:last-child {
-  margin-right: 0;
+  margin-bottom: 15px;
 }
 
 .menu a {
-  display: block;
-  padding: 10px 25px;
-  color: var(--light-grey); /* Gråhvid tekst */
-  font-family: "neue_haas_grotesk_display65Md";
+  color: var(--light-grey);
   text-decoration: none;
-  transition: color 0.3s;
+  font-family: "futura", sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover {
-  color: var(--main-red); /* Primær rød farve ved hover */
-  transform: scale(1.03);
+  color: var(--main-red);
 }
 
+/* BURGER MENU (Mobile) */
 .burger {
+  display: block;
   width: 30px;
   height: 20px;
   cursor: pointer;
@@ -68,151 +79,91 @@ nav {
 .burger .line {
   width: 100%;
   height: 2px;
-  background-color: var(--border-grey); /* Borderfarve */
+  background-color: var(--border-grey);
   margin-bottom: 5px;
   transition: 0.2s linear;
 }
 
-.burger {
-  display: none;
+/* BURGER ACTIVE STYLING */
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* DROPDOWN MENU */
 ul {
   list-style: none;
-  background-color: var(--dark-grey); /* Mørkegrå baggrund */
 }
 
 ul li {
   display: inline-block;
   position: relative;
-  margin-right: 20px;
 }
 
 ul li a {
-  display: block;
-  color: var(--light-grey); /* Gråhvid tekst */
+  color: var(--light-grey);
   text-decoration: none;
-  text-align: start;
   font-size: 17px;
 }
 
-ul li ul.dropdown li {
-  display: block;
-}
-
-ul li ul.dropdown li a {
-  font-size: 14px;
-  text-align: start;
-}
-
 ul li ul.dropdown {
-  width: 200px;
-  background-color: var(--dark-grey); /* Mørkegrå dropdown baggrund */
-  position: absolute;
-  z-index: 999;
   display: none;
+  position: absolute;
+  background-color: var(--dark-grey);
+  border-radius: 10px;
   padding: 0;
-  margin: 0;
-  border-radius: 15px;
 }
 
 ul li:hover ul.dropdown {
   display: block;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  margin-top: 1rem;
+ul li ul.dropdown li a {
+  padding: 10px;
+  font-size: 14px;
 }
 
-.img_logo {
-  width: 250px;
-  height: auto;
-}
-
-@media screen and (max-width: 930px) {
-  header {
-    justify-content: end;
-    z-index: 10;
+/* MEDIA QUERIES (Desktop Styling) */
+@media screen and (min-width: 930px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .menu {
-    display: none;
-    grid-template-columns: unset;
-    grid-gap: unset;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    padding: 10px 20px;
+    font-size: 17px;
   }
 
   .burger {
-    display: block;
+    display: none;
   }
 
-  .burger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
-  }
-
-  .burger.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
-  }
-
-  .burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
-  }
-
-  nav.active .menu {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--dark-grey); /* Mørkegrå baggrund */
-    position: absolute;
-    border-radius: 15px;
-    top: 94px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-  }
-
-  nav.active .menu li {
-    margin: 10px 20px;
-  }
-
-  nav.active .menu a {
-    font-size: 14px;
-    margin-left: -1rem;
-  }
-
-  ul li a {
-    display: block;
-    color: var(--light-grey); /* Gråhvid tekst */
-    text-decoration: none;
-    text-align: start;
-    font-size: 12px;
-  }
-
-  ul li ul.dropdown li {
-    display: block;
-  }
-
-  ul li ul.dropdown li a {
-    font-size: 8px;
-    text-align: start;
-  }
-
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    margin-top: 1rem;
-  }
-
-  .img_logo {
-    width: 120px;
-    height: auto;
+  .logo img {
+    width: 150px;
   }
 }

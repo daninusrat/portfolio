@@ -9,66 +9,283 @@ img {
   height: auto;
   display: block;
 }
-.grid_1-1-1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  padding: 40px;
-}
-/* Grid-layout til billedet og teksten */
+/* Grid-layout til billede og tekst */
 .grid_1-1-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 30px;
+  gap: 30px;
+  padding: 40px;
 }
 
-.grid_1-1-2 img {
-  border-radius: 15px;
-  max-width: 100%;
+.profile-img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* Galleri-billeder */
+.title {
+  font-family: "Futura Bold", sans-serif;
+  font-size: 48px;
+  color: var(--main-red);
+}
+
+.subtitle {
+  font-family: "Futura", sans-serif;
+  font-size: 18px;
+  color: var(--light-grey);
+  line-height: 1.6;
+}
+
+.gradient-line {
+  height: 4px;
+  width: 50%;
+  background: linear-gradient(to right, var(--main-red), var(--dark-red));
+  margin: 10px 0;
+}
+
+.about-text h3 {
+  font-family: "Futura Bold", sans-serif;
+  font-size: 24px;
+  color: var(--main-red);
+}
+
+.about-text p {
+  font-family: "Futura", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.button a {
+  display: inline-block;
+  background-color: var(--main-red);
+  color: var(--light-grey);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button a:hover {
+  background-color: var(--dark-red);
+}
+
+/* Grid til galleri */
 .grid_1-1-1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  gap: 20px;
   padding: 40px;
 }
 
 .grid_1-1-1-1 img {
-  border-radius: 15px;
-  transition: transform 0.3s;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .grid_1-1-1-1 img:hover {
   transform: scale(1.05);
 }
 
-/* H1 styling */
-.navn-titel {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 91px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  color: var(--main-red);
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-.om-mig-titel {
-  font-size: 60px;
-  color: var(--main-red);
-  line-height: 1.5;
-  font-family: var(--font-body);
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Responsiv tilpasning */
+/* RESPONSIV TILPASNING */
 @media (min-width: 920px) {
   .grid_1-1-2 {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
   }
+
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .about-text h3 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+  }
+}
+/* Grid-layout til ikoner */
+.app-ikon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+}
+
+.app-ikon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-ikon img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIV TILPASNING */
+@media (min-width: 920px) {
+  .app-ikon-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .app-ikon img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Grid-layout til projekt sektion */
+.projekt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 40px 20px;
+  color: var(--light-grey);
+}
+
+/* Venstre titel styling */
+.venstre-titel h1 {
+  font-family: "Futura Bold", sans-serif;
+  font-size: 36px;
+  color: var(--main-red);
+  text-align: left;
+}
+
+/* Højre tekst styling */
+.højre-tekst p {
+  font-family: "Futura", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--light-grey);
+  text-align: left;
+}
+/* RESPONSIV TILPASNING - Desktop version */
+@media (min-width: 720px) {
+  .projekt-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .venstre-titel h1 {
+    font-size: 48px;
+    text-align: left;
+  }
+
+  .højre-tekst p {
+    font-size: 18px;
+  }
+}
+
+.process-kort {
+  padding: 40px 20px;
+  color: var(--light-grey);
+}
+
+.process-kort h2 {
+  font-family: "Futura Bold", sans-serif;
+  font-size: 32px;
+  color: var(--main-red);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 720px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.kort {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kort img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.kort:hover img {
+  transform: scale(1.05);
+}
+
+.kort-tekst {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.kort-tekst p {
+  font-family: "Futura", sans-serif;
+  color: var(--light-grey);
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Grid-layout til laptops */
+.projekt-laptops {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 40px;
+}
+
+.laptop-kort {
+  display: block;
+  text-align: center;
+  background-color: var(--dark-grey);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: var(--light-grey);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.laptop-kort img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.laptop-kort p {
+  font-family: "Futura", sans-serif;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.laptop-kort:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--main-red);
+  color: var(--light-grey);
 }

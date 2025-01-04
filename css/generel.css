@@ -9,41 +9,39 @@ img {
   height: auto;
   display: block;
 }
-:root {
-  scroll-behavior: smooth;
-}
 
-html {
+:root {
   --dark-grey: #2c2c2c; /* Mørkegrå baggrund */
   --main-red: #bf3f3f; /* Primær rød skrift */
   --dark-red: #ff3e3e; /* Mørkere rød variant */
   --light-grey: #d9d9d9; /* Gråhvide tekster */
   --border-grey: #8c8c8c;
-  --font-heading: "Bebas Neue", sans-serif;
+  --font-heading: "Futura Bold", sans-serif;
   --font-body: "Roboto", sans-serif;
 }
 
-/* body og main */
+/* Globale styles */
 body {
-  background-color: var(--dark-grey);
-}
-
-main {
-  max-width: 1700px;
-  margin: 0 auto;
-  background-color: var(--dark-grey);
-}
-* Generelle indstillinger */ body {
   background-color: var(--dark-grey);
   color: var(--light-grey);
   font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
+/* Hovedcontainer styling */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Typografi-styling */
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
   color: var(--main-red);
-  font-size: 3rem;
-  margin-bottom: 20px;
 }
 
 p {
@@ -53,20 +51,18 @@ p {
   margin-bottom: 20px;
 }
 
-/* Knappen */
 .button a {
   display: inline-block;
   background-color: var(--main-red);
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
+  color: var(--light-grey);
+  padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
 .button a:hover {
   background-color: var(--dark-red);
-  transform: scale(1.05);
 }
