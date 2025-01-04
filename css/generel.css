@@ -19,6 +19,8 @@ html {
   --dark-red: #ff3e3e; /* Mørkere rød variant */
   --light-grey: #d9d9d9; /* Gråhvide tekster */
   --border-grey: #8c8c8c;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Roboto", sans-serif;
 }
 
 /* body og main */
@@ -27,7 +29,44 @@ body {
 }
 
 main {
-  max-width: 1300px;
+  max-width: 1700px;
   margin: 0 auto;
-  background-color: red;
+  background-color: var(--dark-grey);
+}
+* Generelle indstillinger */ body {
+  background-color: var(--dark-grey);
+  color: var(--light-grey);
+  font-family: var(--font-body);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  color: var(--main-red);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--light-grey);
+  margin-bottom: 20px;
+}
+
+/* Knappen */
+.button a {
+  display: inline-block;
+  background-color: var(--main-red);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.button a:hover {
+  background-color: var(--dark-red);
+  transform: scale(1.05);
 }
