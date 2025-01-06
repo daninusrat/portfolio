@@ -16,7 +16,7 @@
     <!-- <div class="top"> -->
     <div class="logo">
       <a href="index.html" class="a_logo">
-        <img src="images/icon.png" alt="logo" class="img_logo" />
+        <img src="assets/logo.svg" alt="logo" class="img_logo" />
       </a>
     </div>
     <header>
@@ -43,8 +43,20 @@
       </nav>
     </header>
     <main>
-      <h1>YO</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, modi fugit exercitationem distinctio accusamus inventore eaque eveniet labore laudantium, possimus officia velit culpa recusandae cumque, porro iure hic praesentium quae consequatur magnam non minus qui? Rerum voluptatem placeat blanditiis sint!</p>
+      <section class="kontakt-container">
+        <form action="#" method="post" class="kontakt-form">
+          <label for="navn">Navn*</label>
+          <input type="text" id="navn" name="navn" placeholder="Dit navn" required />
+
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="email" placeholder="Din e-mail" required />
+
+          <label for="besked">Besked*</label>
+          <textarea id="besked" name="besked" rows="5" placeholder="Din besked..." required></textarea>
+
+          <button type="submit" class="button_2">Send forespørgsel</button>
+        </form>
+      </section>
     </main>
     <footer>
       <em>Lavet af Dani Nusrat</em>
