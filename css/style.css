@@ -195,7 +195,7 @@ img {
 }
 
 .about-text p {
-  font-family: "roboto" sans-serif;
+  font-family: "roboto", sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
