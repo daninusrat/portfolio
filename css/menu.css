@@ -19,12 +19,10 @@ header {
   top: 0;
   width: 100%;
   background-color: var(--dark-grey);
-  padding: 10px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
 .logo a {
@@ -77,10 +75,10 @@ nav {
 }
 
 .menu a {
-  color: var(--main-red);
-  text-decoration: none;
+  color: var(--light-grey);
+  text-decoration: #bf3f3f;
   font-family: "Futura", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   padding: 10px;
   display: block;
   transition: color 0.3s ease;
@@ -137,7 +135,7 @@ ul li ul.dropdown {
 }
 
 ul li:hover ul.dropdown {
-  display: block;
+  display: none;
 }
 
 ul li ul.dropdown li a {
@@ -148,8 +146,7 @@ ul li ul.dropdown li a {
 /* MEDIA QUERIES (Desktop Styling) */
 @media screen and (min-width: 930px) {
   nav {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 0;
   }
 
   .menu {
@@ -179,6 +176,9 @@ ul li ul.dropdown li a {
   }
 
   .logo img {
-    width: 150px;
+    width: 175px;
+  }
+  ul li:hover ul.dropdown {
+    display: block;
   }
 }
